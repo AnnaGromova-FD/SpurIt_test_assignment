@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+}
+
+.week-goods {
+  background-color: #e5e5e5;
+  padding: 40px 0 60px 0;
+  height: 100vh;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.week-goods__header {
+  color: #000000;
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  color: #2f2f2f;
+  width: 33%;
+  min-height: 482px;
+  background: #ffffff;
+  box-shadow: 0px 0px 45px -4px rgba(0, 0, 0, 0.18);
+  border-radius: 12px;
+  position: relative;
+}
+
+.card__img {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+}
+
+.card-description {
+  padding: 24px;
+  height: 100%;
+}
+
+.card__header {
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
+
+.card__text {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.card__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  margin: 0 24px 23px;
+  background-color: transparent;
+  border: 2px solid #42940f;
+  border-radius: 8px;
+  color: #42940f;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 13px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card__btn:hover {
+  background: #42940f;
+  color: #ffffff;
+}
+
+.card__btn:active {
+  background: #1f5200;
+  border: 2px solid #1f5200;
+  color: #ffffff;
+}
+
+.card__btn:disabled {
+  background: #4e4e4e;
+  color: #ffffff;
+  border: 1px solid #4e4e4e;
+}
+
+.card__tags {
+  display: flex;
+  height: 25px;
+  gap: 16px;
+  position: absolute;
+  left: 16px;
+  top: 16px;
+}
+
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2f2f2f;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  padding: 0 16px;
+}
+
+.tag--new {
+  background: #fdcff3;
+}
+
+.tag--last {
+  background: #ffcf56;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 935px) {
+  .wrap {
+    flex-wrap: wrap;
+  }
+
+  .week-goods {
+    height: 100%;
+  }
+
+  .card {
+    width: 48%;
+  }
+}
+
+@media (max-width: 648px) {
+  .card {
+    width: 100%;
+    min-width: 325px;
+  }
+}
