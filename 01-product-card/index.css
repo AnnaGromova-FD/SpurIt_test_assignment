@@ -6,6 +6,18 @@
   font-weight: 900;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  overflow: hidden;
+}
+
 .week-goods {
   background-color: #e5e5e5;
   padding: 40px 0 60px 0;
@@ -13,8 +25,10 @@
 }
 
 .container {
+  width: 100%;
   max-width: 1180px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .week-goods__header {
@@ -22,20 +36,25 @@
   font-size: 48px;
   text-align: center;
   margin-bottom: 40px;
+  text-transform: uppercase;
 }
 
-.wrap {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
+  grid-gap: 1.25rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   color: #2f2f2f;
-  width: 33%;
   min-height: 482px;
+  max-width: 100%;
+  height: 100%;
   background: #ffffff;
   box-shadow: 0px 0px 45px -4px rgba(0, 0, 0, 0.18);
   border-radius: 12px;
@@ -44,12 +63,17 @@
 
 .card__img {
   width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
   border-radius: 12px 12px 0 0;
+  object-fit: cover;
 }
 
 .card-description {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
   padding: 24px;
-  height: 100%;
 }
 
 .card__header {
@@ -61,6 +85,7 @@
 .card__text {
   font-size: 16px;
   line-height: 24px;
+  padding-bottom: 16px;
 }
 
 .card__btn {
@@ -68,7 +93,8 @@
   justify-content: center;
   align-items: center;
   height: 48px;
-  margin: 0 24px 23px;
+  width: 100%;
+  margin-top: auto;
   background-color: transparent;
   border: 2px solid #42940f;
   border-radius: 8px;
@@ -77,11 +103,12 @@
   text-transform: uppercase;
   padding: 13px;
   text-align: center;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
   cursor: pointer;
 }
 
 .card__btn:hover {
-  background: #42940f;
+  background-color: #42940f;
   color: #ffffff;
 }
 
@@ -95,10 +122,12 @@
   background: #4e4e4e;
   color: #ffffff;
   border: 1px solid #4e4e4e;
+  cursor: not-allowed;
 }
 
 .card__tags {
   display: flex;
+  flex-wrap: wrap;
   height: 25px;
   gap: 16px;
   position: absolute;
@@ -110,12 +139,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #2f2f2f;
   font-weight: 400;
   font-size: 16px;
   text-transform: uppercase;
   border-radius: 8px;
-  padding: 0 16px;
+  padding: 1px 16px;
 }
 
 .tag--new {
@@ -124,31 +152,4 @@
 
 .tag--last {
   background: #ffcf56;
-}
-
-@media (max-width: 1200px) {
-  .container {
-    padding: 0 15px;
-  }
-}
-
-@media (max-width: 935px) {
-  .wrap {
-    flex-wrap: wrap;
-  }
-
-  .week-goods {
-    height: 100%;
-  }
-
-  .card {
-    width: 48%;
-  }
-}
-
-@media (max-width: 648px) {
-  .card {
-    width: 100%;
-    min-width: 325px;
-  }
 }
